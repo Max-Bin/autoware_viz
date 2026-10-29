@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+build/
+*.egg-info/
+
+# Runs and renders
+runs/
+out/
+
+# prettier cache of the pre-commit hook
+node_modules/

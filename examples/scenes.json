@@ -1,0 +1,4 @@
+[
+  { "run": "../runs/drive1", "start": 3.5, "end": 11.5, "title": "Right turn on a green arrow" },
+  { "run": "../runs/drive1", "start": 22.5, "end": 30.5, "title": "Keeps its lane at 49 km/h" }
+]
