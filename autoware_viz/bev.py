@@ -341,7 +341,7 @@ def render_frame(task):
 
 
 def main(argv):
-    ap = argparse.ArgumentParser(prog="trajectory-viz bev", description=__doc__)
+    ap = argparse.ArgumentParser(prog="autoware-viz bev", description=__doc__)
     ap.add_argument("run_dir")
     ap.add_argument("out_dir")
     render.add_selection_args(ap)

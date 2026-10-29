@@ -1,4 +1,4 @@
-# trajectory_viz
+# autoware_viz
 
 Renders a planner's trajectories over a recorded drive: chase-camera and bird's-eye frames,
 animated reels of several scenes, and figures of captioned scenes. It works with any planner
@@ -70,13 +70,13 @@ planners; the first one is followed, the others are drawn beside it. The map is 
 From recordings, given in order (a route recorded only in the first one holds for the rest):
 
 ```bash
-trajectory-viz extract runs/drive1 bag_0 bag_1 --map lanelet2_map.osm
+autoware-viz extract runs/drive1 bag_0 bag_1 --map lanelet2_map.osm
 ```
 
 or live, while the stack runs or a recording plays, until Ctrl-C:
 
 ```bash
-trajectory-viz record runs/drive1 --map lanelet2_map.osm \
+autoware-viz record runs/drive1 --map lanelet2_map.osm \
   --trajectory mine=/my_planner/output/trajectory \
   --trajectory autoware=/planning/scenario_planning/trajectory \
   --timing planner=/my_planner/debug/processing_time_ms
@@ -90,7 +90,7 @@ clouds.
 ### 2. Find scenes
 
 ```bash
-trajectory-viz rank runs/drive1 runs/drive2 --json scenes.json
+autoware-viz rank runs/drive1 runs/drive2 --json scenes.json
 ```
 
 prints how far the plan's position after 1, 2, 3 and 6 s is from where the vehicle drove, then
@@ -100,9 +100,9 @@ while the plan stays close to what was driven. `scenes.json` is ready for `reel`
 ### 3. Render frames
 
 ```bash
-trajectory-viz chase runs/drive1 out/chase --start 3.5 --end 11.5 \
+autoware-viz chase runs/drive1 out/chase --start 3.5 --end 11.5 \
   --title "Right turn on a green arrow" --header "My planner" --horizon 6
-trajectory-viz bev runs/drive1 out/bev --start 3.5 --end 11.5
+autoware-viz bev runs/drive1 out/bev --start 3.5 --end 11.5
 ```
 
 `--start` and `--end` are seconds after the run's first trajectory. Each frame is
@@ -128,7 +128,7 @@ The options that set what is drawn are common to `chase`, `bev`, `reel` and `she
 ### 4. Make a reel
 
 ```bash
-trajectory-viz reel examples/scenes.json out/reel
+autoware-viz reel examples/scenes.json out/reel
 ```
 
 renders each scene of [examples/scenes.json](examples/scenes.json) and joins them, with short
@@ -138,7 +138,7 @@ fades, into `out/reel/reel.webp` (960 pixels wide, `--webp-width`) and `out/reel
 ### 5. Make a figure
 
 ```bash
-trajectory-viz sheet examples/panels.json out/scenes.png
+autoware-viz sheet examples/panels.json out/scenes.png
 ```
 
 draws the frame nearest each panel's time in the `--clean` style and tiles them two to a row:

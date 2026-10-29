@@ -13,7 +13,7 @@
 # limitations under the License.
 
 """
-trajectory-viz: render a planner's trajectories over a recorded drive.
+autoware-viz: render a planner's trajectories over a recorded drive.
 
 commands:
   record   record a run directory live from ROS 2 topics (needs ROS 2)
@@ -24,7 +24,7 @@ commands:
   reel     render a list of scenes and join them into an animated WebP and an MP4
   sheet    compose single scenes into one captioned figure
 
-Run `trajectory-viz <command> --help` for a command's options.
+Run `autoware-viz <command> --help` for a command's options.
 """
 
 import importlib
@@ -46,7 +46,7 @@ def main(argv=None):
     if argv[0] not in COMMANDS:
         print(f"unknown command {argv[0]!r}; one of: {', '.join(COMMANDS)}", file=sys.stderr)
         return 2
-    importlib.import_module(f"trajectory_viz.{argv[0]}").main(argv[1:])
+    importlib.import_module(f"autoware_viz.{argv[0]}").main(argv[1:])
     return 0
 
 

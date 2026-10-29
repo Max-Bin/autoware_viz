@@ -22,8 +22,8 @@ from types import SimpleNamespace as NS
 import numpy as np
 import pytest
 
-from trajectory_viz import inputs
-from trajectory_viz import messages
+from autoware_viz import inputs
+from autoware_viz import messages
 
 
 def time(t):

@@ -37,7 +37,7 @@ from . import style as st
 
 def main(argv):
     ap = argparse.ArgumentParser(
-        prog="trajectory-viz sheet",
+        prog="autoware-viz sheet",
         description=__doc__,
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )

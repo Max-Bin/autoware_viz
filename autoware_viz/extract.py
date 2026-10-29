@@ -48,7 +48,7 @@ def storage_of(path):
 
 
 def main(argv):
-    ap = argparse.ArgumentParser(prog="trajectory-viz extract", description=__doc__)
+    ap = argparse.ArgumentParser(prog="autoware-viz extract", description=__doc__)
     ap.add_argument("run_dir")
     ap.add_argument("bags", nargs="+", help="bag directories or files of one drive, in order")
     add_input_args(ap)

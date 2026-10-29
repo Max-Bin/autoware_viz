@@ -17,7 +17,7 @@ The parts of a Lanelet2 map that are drawn, read straight from its .osm file.
 
 Points are taken from the local_x / local_y tags that Autoware's maps carry, which are the
 coordinates of the map frame; no projection library is needed. A parsed map is cached under
-~/.cache/trajectory_viz, keyed by the file's path, size and modification time.
+~/.cache/autoware_viz, keyed by the file's path, size and modification time.
 """
 
 import hashlib
@@ -76,7 +76,7 @@ def _bounds(items, keys=None):
 def _load_cached(path):
     st = os.stat(path)
     key = f"{CACHE_VERSION}:{os.path.abspath(path)}:{st.st_size}:{st.st_mtime_ns}"
-    cache_dir = os.path.join(os.path.expanduser("~"), ".cache", "trajectory_viz")
+    cache_dir = os.path.join(os.path.expanduser("~"), ".cache", "autoware_viz")
     cache = os.path.join(cache_dir, hashlib.sha1(key.encode()).hexdigest() + ".pkl")
     if os.path.exists(cache):
         try:
@@ -119,7 +119,7 @@ def parse_osm(path):
             el.clear()
     if not nodes:
         raise ValueError(
-            f"{path}: no node has local_x / local_y tags; trajectory_viz reads the map frame "
+            f"{path}: no node has local_x / local_y tags; autoware_viz reads the map frame "
             "coordinates from them, as Autoware's Lanelet2 maps carry them"
         )
 

@@ -22,7 +22,7 @@ heading change (a lane change), objects within 30 m, the signal on the route (wi
 Candidates are 8, 10 and 12 s windows. A window ranks high when it is interesting (it turns,
 changes lane, starts, stops, runs fast, or the signal changes) and the plan stays close to the
 driven path at 3 s throughout. The best non-overlapping windows are printed; --json saves them
-in the form `trajectory-viz reel` reads.
+in the form `autoware-viz reel` reads.
 """
 
 import argparse
@@ -136,7 +136,7 @@ def segments(name, frames, at=3.0, lengths=(8.0, 10.0, 12.0)):
 
 def main(argv):
     ap = argparse.ArgumentParser(
-        prog="trajectory-viz rank",
+        prog="autoware-viz rank",
         description=__doc__,
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )

@@ -19,7 +19,7 @@ import shutil
 from PIL import Image
 import pytest
 
-from trajectory_viz.__main__ import main
+from autoware_viz.__main__ import main
 
 
 def pngs(path):

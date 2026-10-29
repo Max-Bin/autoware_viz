@@ -20,14 +20,14 @@ from conftest import write_osm
 import numpy as np
 import pytest
 
-from trajectory_viz.data import Run
-from trajectory_viz.data import clip_plan
-from trajectory_viz.data import inside
-from trajectory_viz.data import lane_signal
-from trajectory_viz.data import plan_from_row
-from trajectory_viz.data import to_ego
-from trajectory_viz.data import to_map
-from trajectory_viz.lanelet_map import LaneletMap
+from autoware_viz.data import Run
+from autoware_viz.data import clip_plan
+from autoware_viz.data import inside
+from autoware_viz.data import lane_signal
+from autoware_viz.data import plan_from_row
+from autoware_viz.data import to_ego
+from autoware_viz.data import to_map
+from autoware_viz.lanelet_map import LaneletMap
 
 
 def labels_map_ped():

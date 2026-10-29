@@ -61,7 +61,7 @@ def render_scene(scene, run_dir, out_dir, opts, jobs):
 
 def main(argv):
     ap = argparse.ArgumentParser(
-        prog="trajectory-viz reel",
+        prog="autoware-viz reel",
         description=__doc__,
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )

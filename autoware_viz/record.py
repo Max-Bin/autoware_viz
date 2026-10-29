@@ -29,7 +29,7 @@ from .messages import TYPES
 
 
 def main(argv):
-    ap = argparse.ArgumentParser(prog="trajectory-viz record", description=__doc__)
+    ap = argparse.ArgumentParser(prog="autoware-viz record", description=__doc__)
     ap.add_argument("run_dir")
     add_input_args(ap)
     import rclpy
@@ -62,7 +62,7 @@ def main(argv):
 
     class Recorder(Node):
         def __init__(self, writer, streams):
-            super().__init__("trajectory_viz_recorder")
+            super().__init__("autoware_viz_recorder")
             self.writer = writer
             self.pending = {}  # topics whose message type is found by discovery
             self.subs = []
